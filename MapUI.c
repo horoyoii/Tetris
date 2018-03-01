@@ -6,6 +6,7 @@
 #include "MapUI.h"
 #include "Screen.h"
 #include <stdio.h>
+#include "BlockData.h"
 
 // ÀüÃ¼ Æ²
 void Map(void) {
@@ -24,21 +25,99 @@ void MapScore(int* nScore) {
 	ScreenPrint(25, 10, chScore);
 }
 
-void MapNext(void) {
-	//
+void MapNext(int* nBlockType) {
+	ScreenPrint(25, 0, "¡à¡à¡à¡à¡à¡à¡à¡à");
+	ScreenPrint(25, 6, "¡à¡à¡à¡à¡à¡à¡à¡à");
+	for (int i = 0; i < 6; i++) {
+		ScreenPrint(25, i+1, "¡à");
+		ScreenPrint(39, i +1, "¡à");
+	}
+
+	switch (*nBlockType) {
+	case 0:
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (Block0[0][i][j] == 1) {
+					ScreenPrint( j*2+29, i+1,"¡á");
+				}
+			}
+		}
+		break;
+	case 1:
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (Block1[0][i][j] == 1) {
+					ScreenPrint(j * 2 + 29, i + 1, "¡á");
+				}
+			}
+		}
+		break;
+	case 2:
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (Block2[0][i][j] == 1) {
+					ScreenPrint(j * 2 + 29, i + 1, "¡á");
+				}
+			}
+		}
+		break;
+	case 3:
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (Block3[0][i][j] == 1) {
+					ScreenPrint(j * 2 + 29, i + 1, "¡á");
+				}
+			}
+		}
+		break;
+	case 4:
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (Block4[0][i][j] == 1) {
+					ScreenPrint(j * 2 + 29, i + 1, "¡á");
+				}
+			}
+		}
+		break;
+	case 5:
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (Block5[0][i][j] == 1) {
+					ScreenPrint(j * 2 + 29, i + 1, "¡á");
+				}
+			}
+		}
+		break;
+	case 6:
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (Block6[0][i][j] == 1) {
+					ScreenPrint(j * 2 + 29, i + 1, "¡á");
+				}
+			}
+		}
+		break;
+	}
+
+
+
 }
 
 
 // ÁØºñ¸Ê
 void MapReady1(void) {
-	ScreenPrint(6, 5, "T E T R I S");
+	ScreenPrint(6, 2, "T E T R I S");
+	ScreenPrint(4, 7, "Left   : ¡ç");
+	ScreenPrint(4, 8, "Right  : ¡æ");
+	ScreenPrint(4, 9, "Rotate : ¡è");
+	ScreenPrint(4, 10, "Down   : ¡é");
 }
 
 // ÁØºñ¸Ê
 void MapReady2(void) {
 
-	ScreenPrint(4, 10, "Press Enter" );
-	ScreenPrint(12, 11, "to Start");
+	ScreenPrint(4, 14, "Press Enter" );
+	ScreenPrint(12, 15, "to Start");
 }
 
 //°á°ú¸Ê

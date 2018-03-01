@@ -15,6 +15,11 @@
 #include "BlockMove.h"
 #include "BlockSpwan.h"
 
+// 소리 출력 PlaySound함수
+#include<mmsystem.h>
+#pragma comment(lib, "winmm.lib")
+
+
 #define LEFT 75 
 #define RIGHT 77 
 #define UP 72 
@@ -22,7 +27,7 @@
 
 int nScore = 0; // 전역변수 for 누적점수  
 int nBlockType; // 0~6까지의 블록 모형 
-
+int nBlockType2; // 다음에 출력할 블록 모형
 int nRot; // 회전 차순의 지표 0,1,2,3,0,1,2,3,0,1,2,3.... 무한반복
 int nSpawning; // 1이면 내려가는 중, 0이면 스폰준비완료
 int nSpeed; // 내려가는 속도 조절
@@ -52,13 +57,22 @@ void Update() {
 	case READY :
 		break;
 	case RUNNING:
+		//브금 재생
 		// 블록 생성하기 
 		// 현재 1,1 좌표에서 생성되어 내려온다.
 		if (nSpawning == 0) {
+			nBlockType = BlockSpwan();
+			nBlockType2 = BlockSpwan();
+			BlockSpwan2(nArr, &nBlockType);
+
+			nSpawning=1;
+		}
+		if (nSpawning == 3) {
+			nBlockType = nBlockType2;
+			nBlockType2 = BlockSpwan();
 			BlockSpwan2(nArr, &nBlockType);
 			nSpawning = 1;
 		}
-
 
 
 
@@ -87,7 +101,7 @@ void Update() {
 					for (int j = 0; j < 4; j++) {
 						nArr[Block_pos[j].Pos.x][Block_pos[j].Pos.y] = 2;
 					}
-					nSpawning = 0;
+					nSpawning = 3;
 					nRot = 1;
 					break;
 				}
@@ -144,7 +158,7 @@ void Render() {
 	clock_t Curtime = clock();
 	ScreenClear();
 	//출력코드
-	MapScore(&nScore);
+	
 
 	switch (Stage) {
 	case READY :
@@ -170,9 +184,9 @@ void Render() {
 				}
 			}
 		}
-		
-
-
+		// 다음 블록을 우측에서 미리 출력
+		MapNext(&nBlockType2);
+		MapScore(&nScore);
 		//==============================
 		break;
 	case RESULT:
@@ -199,6 +213,7 @@ int main(void) {
 				nKey = _getch();
 				int k = 1;
 				if (nKey == 13) {
+					PlaySound(TEXT("tetris.wav"), NULL, SND_ASYNC | SND_LOOP);
 					Stage = RUNNING;
 				}
 				if (nKey == 224) {
@@ -242,7 +257,7 @@ int main(void) {
 						break;
 					case DOWN: // 바로 내려보리기
 						DownMove(nArr);
-						nSpawning = 0;
+						nSpawning = 3;
 						nRot = 1;
 					}
 				}

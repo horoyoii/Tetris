@@ -6,4 +6,4 @@ void MapScore(int*);
 void MapReady1(void);
 void MapReady2(void);
 void MapResult(int*);
-void MapNext(void);
+void MapNext(int*);

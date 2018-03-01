@@ -13,7 +13,7 @@ int BlockSpwan(void) {
 
 // 결정된 블록 맨 위에서 출력하기
 void BlockSpwan2(int(*arr)[12], int* nType) {
-	*nType = BlockSpwan();
+	//*nType = BlockSpwan();
 
 	switch (*nType) {
 	case  0:
