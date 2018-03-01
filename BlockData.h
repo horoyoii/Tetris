@@ -10,6 +10,7 @@ int Block4[4][4][4];
 int Block5[4][4][4];
 int Block6[4][4][4];
 
+int*** BlockArr[7];
 
 typedef struct _POS {
 	int x;

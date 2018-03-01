@@ -11,14 +11,15 @@
 void Map(void) {
 	ScreenPrint(0, 0, "¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á");
 	for (int i = 1; i < 21; i++) {
-		ScreenPrint(0, i, "¡á                    ¡á");
+		ScreenPrint(0, i, "¡á");
+		ScreenPrint(22, i, "¡á");
 	}
 	ScreenPrint(0, 21, "¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á¡á");
 }
 
 // Á¡¼ö Æ²
 void MapScore(int* nScore) {
-	char chScore[10];
-	sprintf(chScore, "Score : %d", *nScore);
+	char chScore[15];
+	sprintf(chScore, "Score : %d", (*nScore)*500);
 	ScreenPrint(25, 10, chScore);
 }

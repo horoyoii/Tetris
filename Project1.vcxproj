@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClCompile Include="BlockData.c" />
     <ClCompile Include="BlockMove.c" />
+    <ClCompile Include="BlockSpwan.c" />
     <ClCompile Include="framework.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
@@ -157,6 +158,7 @@
   <ItemGroup>
     <ClInclude Include="BlockData.h" />
     <ClInclude Include="BlockMove.h" />
+    <ClInclude Include="BlockSpwan.h" />
     <ClInclude Include="MapUI.h" />
     <ClInclude Include="PanData.h" />
     <ClInclude Include="Screen.h" />
