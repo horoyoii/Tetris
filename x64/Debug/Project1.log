@@ -1,2 +1,10 @@
-﻿  BlockMove.c
+﻿  framework.c
+c:\users\프랜즈\desktop\작성중인 파일 clang\game\4)테트리스\framework.c(11): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
+c:\users\프랜즈\desktop\작성중인 파일 clang\game\4)테트리스\framework.c(39): warning C4013: 'PanMap'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\프랜즈\desktop\작성중인 파일 clang\game\4)테트리스\framework.c(198): warning C4013: '_kbhit'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\프랜즈\desktop\작성중인 파일 clang\game\4)테트리스\framework.c(199): warning C4013: '_getch'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  MapUI.c
+  BlockSpwan.c
+c:\users\프랜즈\desktop\작성중인 파일 clang\game\4)테트리스\blockspwan.c(7): warning C4244: '함수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
   Project1.vcxproj -> C:\Users\프랜즈\Desktop\작성중인 파일 clang\game\4)테트리스\x64\Debug\Project1.exe
