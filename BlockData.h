@@ -1,23 +1,23 @@
 #pragma once
 
 
-// ³»·Á°¡´Â ºí·ÏÀÇ Á¤º¸¸¦ ÀúÀå
-int Block0[4][4][4];
-int Block1[4][4][4];
-int Block2[4][4][4];
-int Block3[4][4][4];
-int Block4[4][4][4];
-int Block5[4][4][4];
-int Block6[4][4][4];
+extern int Block0[4][4][4];
+extern int Block1[4][4][4];
+extern int Block2[4][4][4];
+extern int Block3[4][4][4];
+extern int Block4[4][4][4];
+extern int Block5[4][4][4];
+extern int Block6[4][4][4];
+extern int*** BlockArr[7];
 
-int*** BlockArr[7];
+extern BLOCK_POS Block_pos[4];
 
 typedef struct _POS {
 	int x;
 	int y;
 }POS;
 
-typedef struct _BLOCK_POS { // ³»·Á°¡°í ÀÖ´Â ´ë»óÀÇ ºí·ÏÀÇ ÁÂÇ¥¸¦ ÀúÀå
+typedef struct _BLOCK_POS { // ë‚´ë ¤ê°€ê³  ìˆëŠ” ëŒ€ìƒì˜ ë¸”ë¡ì˜ ì¢Œí‘œë¥¼ ì €ì¥
 	POS Pos;
 }BLOCK_POS;
 
